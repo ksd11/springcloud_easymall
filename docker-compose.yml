@@ -1,0 +1,30 @@
+version: "3.2"
+
+services:
+  nacos:
+    image: nacos/nacos-server
+    environment:
+      MODE: standalone
+    ports:
+      - "8848:8848"
+  userservice:
+    build: ./user-service
+  orderservice:
+    build: ./order-service
+  productservice:
+    build: ./product-service
+  cartservice:
+    build: ./cart-service
+  categoryservice:
+    build: ./category-service
+  adminservice:
+    build: ./admin-service
+  easymallservice1:
+    build: ./easymall-service1
+    ports:
+      - "8080:8080"
+  easymallservice2:
+    build: ./easymall-service2
+    ports:
+      - "8081:8081"
+ 
